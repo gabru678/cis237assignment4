@@ -124,5 +124,14 @@ namespace cis237assignment4
             //return the completed string
             return returnString;
         }
+
+        // This would be the method that sorts it?
+        // like if its in a array already?
+        // if so shouldnt this be in the interface already?
+        // Will this require for a method to be overridden?
+        public int SortByModel()
+        {
+            // Add the code to sort the DroidCollection
+        }
     }
 }
