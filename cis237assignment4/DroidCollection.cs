@@ -11,9 +11,14 @@ namespace cis237assignment4
     class DroidCollection : IDroidCollection
     {
         //Private variable to hold the collection of droids
-        private IDroid[] droidCollection;
+        // changed to a IComparable
+        private IComparable[] droidCollection;
         //Private variable to hold the length of the Collection
         private int lengthOfCollection;
+
+        // also create an instance of the Merge Sort class to be used
+        //MergeSort sortArray = new MergeSort();
+        // welp NVM, gave build errors
 
         //Constructor that takes in the size of the collection.
         //It sets the size of the internal array that will be used.
@@ -51,6 +56,10 @@ namespace cis237assignment4
             }
 
             // Remember to also add this droid to the LinkedList!
+            // wait, to double check ask teacher, because
+            // if done where I am doing it, it would just be done regardless?
+            // only the completion of the Droid collection would seem to matter?
+            // As that is our prevailing IF statement?
         }
 
         //The Add method for a Utility droid. Code is the same as the above method except for the type of droid being created.
@@ -69,6 +78,10 @@ namespace cis237assignment4
             }
 
             // Remember to add this droid to the LinkedList!
+            // wait, to double check ask teacher, because
+            // if done where I am doing it, it would just be done regardless?
+            // only the completion of the Droid collection would seem to matter?
+            // As that is our prevailing IF statement?
         }
 
         //The Add method for a Janitor droid. Code is the same as the above method except for the type of droid being created.
@@ -86,6 +99,10 @@ namespace cis237assignment4
             }
 
             // Remember to add this droid to the LinkedList!
+            // wait, to double check ask teacher, because
+            // if done where I am doing it, it would just be done regardless?
+            // only the completion of the Droid collection would seem to matter?
+            // As that is our prevailing IF statement?
         }
 
         //The Add method for a Astromech droid. Code is the same as the above method except for the type of droid being created.
@@ -103,6 +120,10 @@ namespace cis237assignment4
             }
 
             // Remember to add this droid to the LinkedList!
+            // wait, to double check ask teacher, because
+            // if done where I am doing it, it would just be done regardless?
+            // only the completion of the Droid collection would seem to matter?
+            // As that is our prevailing IF statement?
         }
 
         //The last method that must be implemented due to implementing the interface.
@@ -159,13 +180,68 @@ namespace cis237assignment4
         {
             // Add the code to sort the DroidCollection
             //But first create and use the Stacks and Queue's!
+
+            GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
+            GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
+            GenericStack<JanitorDroid> JanitorStack = new GenericStack<JanitorDroid>();
+            GenericStack<AstromechDroid> AstroStack = new GenericStack<AstromechDroid>();
+
+            GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
+            
+            // then go through and sort them
+            foreach (IDroid droid in droidCollection)
+            {
+                if ( droid != null)
+                {
+                    if ( droid is AstromechDroid)
+                    {
+                        droidQueue.Enqueue((AstromechDroid)droid);
+                    }
+
+                    else if ( droid is JanitorDroid)
+                    {
+                        droidQueue.Enqueue((JanitorDroid)droid);
+                    }
+
+                    else if ( droid is UtilityDroid)
+                    {
+                        droidQueue.Enqueue((UtilityDroid)droid);
+                    }
+                    
+                    else if ( droid is ProtocolDroid)
+                    {
+                        droidQueue.Enqueue((ProtocolDroid)droid);
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+
         }
 
-        public void MergeSortbyTotalCost()
+        public void MergeSortByTotalCost()
         {
             // use an array that will be passed in
             // and create a IDroid droid that will be used
             // and will call the methods from ( Inheritance!)
+   
+            foreach(IDroid droid in droidCollection)
+            {
+                if ( droid != null)
+                {
+                    droid.CalculateTotalCost();
+                }
+
+                else
+                {
+                    break;
+                }
+            }
+
+            MergeSort sortarray = new MergeSort(droidCollection);
         }
 
 

@@ -26,7 +26,7 @@ namespace cis237assignment4
             int choice = userInterface.GetMenuChoice();
 
             //While the choice is not equal to 3, continue to do work with the program
-            while (choice != 3)
+            while (choice != 4)
             {
                 //Test which choice was made
                 switch (choice)
@@ -40,6 +40,26 @@ namespace cis237assignment4
                     case 2:
                         userInterface.PrintDroidList();
                         break;
+
+                    case 3:
+                        // get what they want to sort by
+                        userInterface.SortingOptions();
+                        choice = userInterface.GetMenuChoice();
+                        // Then once its sorted
+                        // show the more specific menu and then sort it out!
+
+                        if ( choice == 1)
+                        {
+                            droidCollection.BucketSortByModel();
+                        }
+
+                        else
+                        {
+                            droidCollection.MergeSortByTotalCost();
+                        }
+
+                        break;
+
                 }
                 //Re-display the menu, and re-prompt for the choice
                 userInterface.DisplayMainMenu();

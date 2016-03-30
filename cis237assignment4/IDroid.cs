@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace cis237assignment4
 {
     // IComparable?
-    interface IDroid
+    // was in the instructions to implement it, so I did
+    interface IDroid : IComparable
     {
         //Method to calculate the total cost of a droid
         void CalculateTotalCost();

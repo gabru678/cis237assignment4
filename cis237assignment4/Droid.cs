@@ -70,5 +70,27 @@ namespace cis237assignment4
         // Here is where I would be able to add a method to compare the various droids
         // within?  Becuase as they are made it would work best here I think?
 
+        public int CompareTo(object thing)
+        {
+            // return 1 if working
+            if( thing == null)
+            {
+                return 1;
+            }
+
+            Droid otherDroid = (Droid)thing;
+
+            // but if its not empty then return the comparison
+            if ( otherDroid != null)
+            {
+                return this.totalCost.CompareTo(otherDroid.totalCost);
+            }
+
+            else
+            {
+                throw new ArgumentException("Object no Total Cost :(");
+            }
+
+        }
     }
 }

@@ -31,10 +31,34 @@ namespace cis237assignment4
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
-            //Console.WriteLine("3. Sort the current list by Model");
-            //Console.WriteLine("4. Sorth the current list by Price");
-            Console.WriteLine("5. Exit the program");
+            Console.WriteLine("3. Choose method to sort the current list?");
+            Console.WriteLine("4. Exit the program");
         }
+
+        //Because I first wanted to acnowledge them choosing to sort it
+        // I now create a menu to further specify
+        // Use Teachers mthod of creating new method for each menu option
+        public void SortingOptions()
+        {
+            Console.WriteLine("\n1. Sort by Model");
+            Console.WriteLine("2. Sort by Total Cost");
+        }
+        
+        // Now lets just define that method here
+        public int DroidSortOption()
+        {
+            SortingOptions();
+            int choice = this.GetMenuChoice();
+
+            while(choice < 1 || choice > 2)
+            {
+                SortingOptions();
+                choice = this.GetMenuChoice();
+            }
+
+            return choice;
+        }
+
 
         //Method to get a menu choice
         public int GetMenuChoice()
