@@ -17,5 +17,17 @@ namespace cis237assignment4
         
         //Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
+
+        // The other collection will need to implement these too!
+        // So if they are created here the Droid collection that interfaces this
+        // Is going to need to define these methods
+        // So do the code over there
+        // because then we would be able to define the code if we were to
+        // add another method or something in the future
+        // but would we need to change the code in the interface first too?
+        // otherwise it wouldnt be Abstract, and arent they by default sealed?S
+        void BucketSortByModel();
+
+        void MergeSortByTotalCost();
     }
 }

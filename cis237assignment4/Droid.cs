@@ -66,5 +66,9 @@ namespace cis237assignment4
                     "Model: " + this.model + Environment.NewLine +
                     "Color: " + this.color + Environment.NewLine;
         }
+
+        // Here is where I would be able to add a method to compare the various droids
+        // within?  Becuase as they are made it would work best here I think?
+
     }
 }

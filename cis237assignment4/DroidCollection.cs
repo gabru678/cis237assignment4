@@ -20,6 +20,9 @@ namespace cis237assignment4
         //It also sets the length of the collection to zero since nothing is added yet.
         public DroidCollection(int sizeOfCollection)
         {
+            // This would be where to create a manual array of Droid
+            // for testing
+
             //Make new array for the collection
             droidCollection = new IDroid[sizeOfCollection];
             //set length of collection to 0
@@ -46,6 +49,8 @@ namespace cis237assignment4
                 //Return false
                 return false;
             }
+
+            // Remember to also add this droid to the LinkedList!
         }
 
         //The Add method for a Utility droid. Code is the same as the above method except for the type of droid being created.
@@ -62,6 +67,8 @@ namespace cis237assignment4
             {
                 return false;
             }
+
+            // Remember to add this droid to the LinkedList!
         }
 
         //The Add method for a Janitor droid. Code is the same as the above method except for the type of droid being created.
@@ -77,6 +84,8 @@ namespace cis237assignment4
             {
                 return false;
             }
+
+            // Remember to add this droid to the LinkedList!
         }
 
         //The Add method for a Astromech droid. Code is the same as the above method except for the type of droid being created.
@@ -92,6 +101,8 @@ namespace cis237assignment4
             {
                 return false;
             }
+
+            // Remember to add this droid to the LinkedList!
         }
 
         //The last method that must be implemented due to implementing the interface.
@@ -102,7 +113,15 @@ namespace cis237assignment4
             //Declare the return string
             string returnString = "";
 
+            // Temp IDroid here?  to hold the pulling from the list?
+
+            // as in Idroid temp; ?
+
             //For each droid in the droidCollection
+
+            // And the Linked List!  Add those things in here!
+
+
             foreach (IDroid droid in droidCollection)
             {
                 //If the droid is not null (It might be since the array may not be full)
@@ -119,9 +138,16 @@ namespace cis237assignment4
                     returnString += "******************************" + Environment.NewLine;
                     returnString += Environment.NewLine;
                 }
+
+                // add the total cost methods for the LinkedList too!
+                // and then print those out as a returnString
+                // Use that previous temp for the DroidList.Retrieve(i); part
+                // then call that temps calcucate total cost method
+                // Then apply it to the above returnString output to the console!
             }
 
             //return the completed string
+            //Keeping this!
             return returnString;
         }
 
@@ -129,9 +155,19 @@ namespace cis237assignment4
         // like if its in a array already?
         // if so shouldnt this be in the interface already?
         // Will this require for a method to be overridden?
-        public int SortByModel()
+        public void BucketSortByModel()
         {
             // Add the code to sort the DroidCollection
+            //But first create and use the Stacks and Queue's!
         }
+
+        public void MergeSortbyTotalCost()
+        {
+            // use an array that will be passed in
+            // and create a IDroid droid that will be used
+            // and will call the methods from ( Inheritance!)
+        }
+
+
     }
 }
